@@ -75,6 +75,7 @@ const DetailsBanner = ({ video, crew }) => {
                         className="playbtn"
                         onClick={() => {
                           setShow(true);
+                          // eslint-disable-next-line react/prop-types
                           setVideoId(video.key);
                         }}
                       >
