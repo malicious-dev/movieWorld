@@ -47,7 +47,7 @@ const Footer = () => {
           className="infoText"
           style={{
             marginTop: '20px',
-            color: 'white !important',
+            // color: 'white !important',
             // fontSize: '20px',
           }}
         >
