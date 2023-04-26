@@ -15,6 +15,7 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
   const posterUrl = data.poster_path
     ? url.poster + data.poster_path
     : PosterFallback;
+
   return (
     <div
       className="movieCard"
@@ -32,9 +33,25 @@ const MovieCard = ({ data, fromSearch, mediaType }) => {
       <div className="textBlock">
         <span className="title">{data.title || data.name}</span>
         <span className="date">
-          {data?.media_type === 'movie'
-            ? dateFormat(data?.release_date, masks.mediumDate)
-            : dateFormat(data?.first_air_date, masks.mediumDate)}
+          {fromSearch ? (
+            <>
+              {data?.media_type === 'movie'
+                ? dateFormat(data?.release_date, masks.mediumDate)
+                : null}
+              {data?.media_type === 'tv'
+                ? dateFormat(data?.first_air_date, masks.mediumDate)
+                : null}{' '}
+            </>
+          ) : (
+            <>
+              {data?.release_date
+                ? dateFormat(data?.release_date, masks.mediumDate)
+                : null}
+              {data?.first_air_date
+                ? dateFormat(data?.first_air_date, masks.mediumDate)
+                : null}
+            </>
+          )}
         </span>
       </div>
     </div>
