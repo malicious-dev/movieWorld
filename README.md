@@ -1,4 +1,2 @@
-# movieWorld
-
-Created using vite and using themoviedb database
+Explore Every Movie and tv show in Details With upcoming, release, trending and more.
 
