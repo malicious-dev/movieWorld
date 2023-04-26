@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import dayjs from 'dayjs';
-
 import './style.scss';
 
 import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
@@ -101,7 +99,7 @@ const DetailsBanner = ({ video, crew }) => {
                         <div className="infoItem">
                           <span className="text bold">Release Date: </span>
                           <span className="text">
-                            {dayjs(data.release_date).format('MMM D, YYYY')}
+                            {dateFormat(data.release_date, masks.mediumDate)}
                           </span>
                         </div>
                       )}
