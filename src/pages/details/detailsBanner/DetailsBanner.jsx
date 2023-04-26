@@ -13,6 +13,7 @@ import Img from '../../../components/lazyLoadImage/Img.jsx';
 import PosterFallback from '../../../assets/no-poster.png';
 import { PlayIcon } from '../Playbtn';
 import VideoPopup from '../../../components/videoPopup/VideoPopup';
+import dateFormat, { masks } from 'dateformat';
 
 const DetailsBanner = ({ video, crew }) => {
   const [show, setShow] = useState(false);
@@ -35,7 +36,6 @@ const DetailsBanner = ({ video, crew }) => {
     const minutes = totalMinutes % 60;
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
   };
-
   return (
     <div className="detailsBanner">
       {!loading ? (
@@ -60,9 +60,12 @@ const DetailsBanner = ({ video, crew }) => {
                   </div>
                   <div className="right">
                     <div className="title">
-                      {`${data.name || data.title} (${dayjs(
-                        data?.release_date
-                      ).format('YYYY')})`}
+                      {`${data.name || data.title} 
+                      (${
+                        mediaType === 'movie'
+                          ? dateFormat(data?.release_date, 'yyyy')
+                          : dateFormat(data?.first_air_date, 'yyyy')
+                      }) `}
                     </div>
                     <div className="subtitle">{data.tagline}</div>
 
