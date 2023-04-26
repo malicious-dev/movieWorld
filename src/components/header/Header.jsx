@@ -73,14 +73,14 @@ const Header = () => {
     return (
         <header className={ `header ${mobileMenu ? "mobileView" : ""} ${show}` }>
             <ContentWrapper>
-                <div style={ { backgroundImage: 'linear-gradient(red, yellow)', padding: '10px', borderRadius: '5px' } } className="logo" onClick={ () => navigate("/") }>
+                <div style={ { backgroundImage: 'linear-gradient(yellow, red)', padding: '10px', borderRadius: '5px' } } className="logo" onClick={ () => navigate("/") }>
                     {/* <img src={logo} alt="" /> */ }
                     <h1 style={ {
                         // backgroundImage: 'linear-gradient(red, yellow)',
                         fontSize: "1.5rem",
                         fontWeight: "bold",
                         color: "black",
-                    } }>Movie Wiki</h1>
+                    } }>MoviTv Wiki</h1>
                 </div>
                 <ul className="menuItems">
                     <li
